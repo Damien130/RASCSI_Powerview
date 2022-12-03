@@ -593,7 +593,7 @@ bool SCSIPowerView::WriteColorPalette(const DWORD *cdb, const BYTE *buf, const D
 
 bool SCSIPowerView::WriteFrameBuffer(const DWORD *cdb, const BYTE *buf, const DWORD length)
 {
-	char newstring[1024];
+	// char newstring[1024];
     // uint32_t new_screen_width_px =0;
 	// uint32_t new_screen_height_px=0;
 	uint32_t update_width_px=0;
