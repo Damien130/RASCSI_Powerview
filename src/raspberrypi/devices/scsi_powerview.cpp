@@ -424,7 +424,7 @@ bool SCSIPowerView::Init(const map<string, string>& params)
 
 	// Report status to the screen
 	char status_string[256];
-	sprintf(status_string, "PowerView initialized on %dx%d %d bpp framebuffer\r", fbinfo.xres, fbinfo.yres, fbinfo.bits_per_pixel);
+	sprintf(status_string, "Hello, I'm technically a Mac now. Initilized on %dx%d %d bpp framebuffer\r", fbinfo.xres, fbinfo.yres, fbinfo.bits_per_pixel);
 	fbcon_text(status_string);
 	LOGINFO(status_string);
 
@@ -523,7 +523,7 @@ bool SCSIPowerView::WriteColorPalette(const DWORD *cdb, const BYTE *buf, const D
 
 	color_depth = new_color;
 
-	switch(color_depth){
+	/*switch(color_depth){
 		case eColorsBW:
 	memcpy(color_palette, default_color_palette_bw, sizeof(default_color_palette_bw));
 		break;
@@ -536,7 +536,7 @@ bool SCSIPowerView::WriteColorPalette(const DWORD *cdb, const BYTE *buf, const D
 		default:
 		LOGWARN("UNHANDLED COLOR DEPTH: %04X", color_depth);
 		break;
-	}
+	}*/
 
 	// memcpy(color_palette, buf, length);
 	// color_palette_length = length;
@@ -642,6 +642,7 @@ bool SCSIPowerView::WriteFrameBuffer(const DWORD *cdb, const BYTE *buf, const DW
 		screen_width_px = update_width_px;
 		screen_height_px = update_height_px;
 
+		/*
 		switch(color_depth){
 			case eColorDepth_t::eColorsBW:
 				sprintf(newstring, "  Black & White %04X - %u x %u                              \r", color_depth, screen_width_px, screen_height_px);
@@ -657,6 +658,7 @@ bool SCSIPowerView::WriteFrameBuffer(const DWORD *cdb, const BYTE *buf, const DW
 				break;
 		}
 		fbcon_text(newstring);
+		*/
 
 	}
 
